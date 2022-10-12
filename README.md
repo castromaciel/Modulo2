@@ -74,7 +74,7 @@ git push -u origin <nombre-de-tu-rama>
 El comando git pull se utiliza para recibir/descargar actualizaciones del repositorio remoto. Este comando es una combinación del git fetch y del git merge lo cual significa que cundo usemos el git pull recogeremos actualizaciones del repositorio remoto (git fetch) e inmediatamente aplicamos estos últimos cambios en local (git merge).
 
 ````
-git pull <nombre-remoto>
+git pull
 ````
 **Esta operación puede generar conflictos que tengamos que resolver manualmente.**
 
