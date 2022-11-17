@@ -53,4 +53,39 @@ function printImage (isWeekend) {
   }
 }
 
-printImage( isWeekend(date) )
+// printImage( isWeekend(date) )
+
+let nota = parseInt(prompt("Ingrese una nota del 0 al 10"))
+
+// isNan => si el numero que yo estoy 
+// ingresando NO es numerico
+// limite entre 0 y 10 
+
+// false || false || false
+// numero fuera del rango -> nro erroneo
+// numero no valido, introduce un numero valido.
+
+while ( isNaN(nota) || nota < 0 || nota > 10 ) {
+
+  if ( isNaN(nota) ) {
+    nota = parseInt(prompt("ingresa por favor un número válido")) 
+  } else {
+    alert('Número erroneo')
+    nota = parseInt(prompt("Ingrese una nota del 0 al 10"))
+  }
+
+}
+
+if (nota <= 2){
+  alert("Muy deficiente")
+} else if (nota <= 4) {
+  alert("Insuficiente")
+} else if (nota <=6) {
+  alert("Suficiente")
+} else if (nota === 7){
+  alert("Bien")
+} else if (nota <= 9) {
+  alert("Notable") 
+} else if (nota === 10) {
+  alert("Sobresaliente")
+}
