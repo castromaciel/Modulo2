@@ -165,3 +165,91 @@ causaría algún error, pero esto no es así. El valor de `user` es constante, e
 En otras palabras `const user` solo da un error solamente si tratamos asignar `user = ...` como un todo.
 
 ---
+
+### Métodos del objeto:
+
+Los objetos son creados usualmente para representar entidades en el mundo real, como usuario, órdenes, etc.
+
+Y en el mundo real, un usario puede *actuar*: seleccionar algo del carrito de compras, hacer login, logout, etc...
+
+Las acciones son representadas por funciones en las propiedades.
+
+```javascript
+const user = {
+  name: 'Maciel',
+  age: 30
+  sayHi: function() {
+    console.log('¡Hola!');
+  }
+}
+
+user.sayHi() // ¡Hola!
+```
+
+Una función que es la propiedad de un objeto es denominada su *método*
+
+Existe una sintaxis más corta para los metodos en objetos literales: 
+
+```javascript
+const user = {
+  sayHi() {
+    console.log('¡Hola!')
+  }
+}
+```
+
+---
+
+### Sintaxis báscia de Class:
+
+**_`En informática, una clase es un molde para la creación de objetos de datos según un modelo predefinido.
+Cada clase es un modelo que define un conjunto de variables, y métodos apropiados para operar con dichos datos.`_**
+
+
+La sintaxis básica es:
+
+```javascript
+class MyClass {
+  // métodos de clase
+  constructor() {
+    ... 
+  }
+  method1() {
+    ... 
+  }
+  method2() {
+    ... 
+  }
+  ...
+}
+```
+
+El método `constructor()` es donde inicializamos nuestro objeto, por ejemplo:
+
+```javascript
+class User {
+  constructor(name){
+    this.name = name;
+  }
+
+  sayHi() {
+    console.log(this.name);
+  }
+}
+
+const user = new User('Leandro')
+user.sayHi()
+```
+
+Cuando se llama a `new User('Leandro')`:
+
+  1. Un objeto nuevo es creado.
+  2. El `constructor` se ejecuta con el argumento dado y lo asigna a `this.name`.
+
+Entonces podemos llamar a sus métodos, como `user.sayHi()`
+
+> **No va una coma entre métodos de clase**
+>
+> Un tropiezo común en desarrolladores principiantes es poner una coma entre los métodos de clase, lo que resulta en un error de sintaxis.
+>
+> La notación aquí no debe ser confundida con la sintaxis de objeto literal. **Dentro de la clase no se requieren comas.**
