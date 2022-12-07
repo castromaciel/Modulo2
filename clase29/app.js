@@ -151,3 +151,4 @@ const repeticion = window.setInterval( () => {
 window.setTimeout(() => {
   console.log('Pasaron 5 segundos')
 }, 5000)
+
